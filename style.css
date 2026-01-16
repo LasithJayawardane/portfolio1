@@ -202,30 +202,29 @@ a{ color:inherit; text-decoration:none; }
 .stat-label{ color: var(--muted); font-size: 13px; font-weight: 600; }
 
 /* Profile card */
-.profile-card{
-  position: relative;
-  border-radius: 22px;
-  padding: 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  border: 1px solid var(--stroke);
-  box-shadow: var(--shadow);
-  overflow:hidden;
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.profile-ring{
-  position:absolute;
-  inset: -40px -40px auto auto;
-  width: 180px; height: 180px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, rgba(45,124,255,.35), transparent 55%),
-              radial-gradient(circle at 60% 60%, rgba(0,194,255,.25), transparent 55%);
-  filter: blur(0px);
+.profile-ring {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  /* background: linear-gradient(135deg, #1e90ff, #00c6ff); */
+  filter: blur(12px);
+  opacity: 0.6;
+  z-index: 0;
 }
-.profile-img{
-  width: 100%;
-  height: 290px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
+.profile-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;        /* ✅ makes it circular */
+  object-fit: cover;        /* ✅ prevents stretching */
+  border: 4px solid #1e90ff; /* optional blue border */
+  background: #000;
 }
 .profile-info{ margin-top: 14px; }
 .profile-info h3{ font-size: 18px; }
